@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html" >
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>IdentiFour</title>
+
+	<link rel="stylesheet" href="#{request.contextPath}/resources/css/style-login.css" type="text/css" media="screen" />
+	<link type="text/css" rel="stylesheet" href="%PATH_TO_THEME_FOLDER%/skin.css" />
+	
+	<script type="text/javascript" src="#{request.contextPath}/resources/js/jquery-1.5.1.min.js"></script>
+	<script type="text/javascript">
+	    $(document).ready(function() {
+	        $(".username").focus(function() {
+	            $(".user-icon").css("left", "-48px");
+	        });
+	        $(".username").blur(function() {
+	            $(".user-icon").css("left", "0px");
+	        });
+	
+	        $(".password").focus(function() {
+	            $(".pass-icon").css("left", "-48px");
+	        });
+	        $(".password").blur(function() {
+	            $(".pass-icon").css("left", "0px");
+	        });
+	    });
+	</script>
+
+</h:head>
+
+<h:body>
+
+	<div id="header">
+		<div class="wrapper">
+			<div id="logo"></div>
+			<div id="title">
+				<span>Sistema de Control Vehicular "IdentiFour"</span>
+			</div>
+		</div>
+	</div>
+
+	<div id="menu"></div>
+
+	<div id="main">
+		<div class="wrapper">
+			<ui:insert name="content">Content</ui:insert>
+		</div>
+	</div>
+
+</h:body>
+
+</html>

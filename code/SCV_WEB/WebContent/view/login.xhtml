@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="../resources/templates/masterLogin.xhtml">
+	
+		<ui:define name="content">
+			
+			<div id="content">
+				<div id="wrapper-form">
+				
+					<div class="user-icon"></div>
+					<div class="pass-icon"></div>
+
+					<h:form id="frm" class="login-form">
+					
+						<p:growl id="sms" autoUpdate="true" life="3000"/>
+					
+						<div class="header">
+							<h1>Iniciar Sesion</h1>
+							<span>Debe ingresar sus credenciales para Ingresar al Sistema</span>
+						</div>
+
+						<div class="content">
+							<h:inputText id="username" class="input username" value="#{loginBean.username}" />
+							<h:inputSecret id="password" class="input password" value="#{loginBean.password}" autocomplete="off" />
+						</div>
+
+						<div class="footer">
+							<h:commandButton value="Login" actionListener="#{loginBean.displayMessage()}" class="button" />
+						</div>
+						
+					</h:form>
+					
+				</div>
+			</div>
+
+		</ui:define>
+
+	</ui:composition>
+
+</h:body>
+
+
+</html>

@@ -1,0 +1,172 @@
+@CHARSET "ISO-8859-1";
+
+/*	IMPORT	*/
+@import url('reset.css');
+
+/*	CONFIGURACIONES GENERALES	*/
+.clear{
+    clear:both;
+    height:1px;
+}
+
+.inv{ display:none; }
+
+.alignleft {
+    float: left;
+    margin: 5px 10px 5px 0px;
+}
+
+h1,h2,h3,h4,h5,h6{ 
+    line-height: 1.4em;
+    font-family: 'Ubuntu', arial, serif; 
+    font-weight: lighter;
+    color: #FFFFFF;
+}
+
+h1{ font-size: 30px; }
+
+h2{ font-size: 28px; }
+
+h3{ font-size: 26px; }
+
+h4{ font-size: 24px; }
+
+h5{ font-size: 22px; }
+
+h6{ font-size: 20px; }
+
+body {
+    line-height: 1;
+    color: #51565b;
+    background: #f1f1f1 url(img/noise.png);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:  100%;
+}
+
+/*	CABECERA	*/
+#header{
+    height: 116px;
+    position: relative;
+    z-index: 10;
+    background: rgb(62,136,153); Old browsers
+    background: -moz-linear-gradient(top,  rgba(62,136,153,1) 0%, rgba(0,124,157,1) 100%); FF3.6+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(62,136,153,1)), color-stop(100%,rgba(0,124,157,1))); Chrome,Safari4+
+    background: -webkit-linear-gradient(top,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); Chrome10+,Safari5.1+
+    background: -o-linear-gradient(top,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); Opera 11.10+
+    background: -ms-linear-gradient(top,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); IE10+
+    background: linear-gradient(to bottom,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); W3C
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e8899', endColorstr='#007c9d',GradientType=0 ); IE6-9
+}
+
+/*	ENVOLTURA	*/
+.wrapper{
+    width: 1000px;
+    margin: 0px auto;
+    position: relative;
+}
+
+/*	LOGOTIPO	*/
+#logo {
+	width: 209px;
+	height: 110px;
+    position: absolute;
+    top: 3px;
+    left: 30px;
+    background-image: url(img/icono_110.png);
+}
+
+/*	TITULO	*/
+#title {
+    position: absolute;
+    left: 150px;
+    top: 53px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 30px;
+    color: #E5E5E5;
+    text-shadow: 1px 1px 0 rgba(100,0,0,1.0);
+}
+
+/*	MENU	*/
+#menu {
+    width: 100%;
+    padding-top: 2px;
+    margin-bottom: 0px;
+    background: #f858ef; 
+    background: -webkit-gradient(linear, left top, right bottom, from(#f858ef), to(#ffe413)); 
+    background: -moz-linear-gradient(left,  #f858ef,  #ffe413);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f858ef', endColorstr='#ffe413', GradientType=1);
+}
+
+/*	PRINCIPAL	*/
+#main {
+    width: 100%;
+}
+
+/*	ABAJO	*/
+#bottom {
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.5em;
+    line-height: 60px;
+    color: #E6E6E6;
+    background: rgb(62,136,153); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(62,136,153,1) 0%, rgba(0,124,157,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(62,136,153,1)), color-stop(100%,rgba(0,124,157,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e8899', endColorstr='#007c9d',GradientType=0 ); /* IE6-9 */
+}
+
+#bottom #bottom-text {
+    width: 600px;
+    overflow: hidden;
+    margin-left: 30px;	
+}
+
+#bottom a {
+    color: #AFEAF9;
+    text-decoration: none;
+}
+
+/*	CONTENIDO	*/
+#content {
+    min-height: 420px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
+/*	ICONOS SOCIALES	*/
+.social{
+    position: absolute;
+    top: 15px;
+    right: 0px;
+    display: block;
+    overflow: hidden;
+}
+
+.social li{
+    display: block;
+    width: 32px;
+    height: 32px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#bottom .social a{
+    display: block;
+    width: 32px;
+    height: 32px;
+    text-indent: -9000px;
+}
+
+#bottom .social a:hover{
+    background-position: 0px -32px;
+}
