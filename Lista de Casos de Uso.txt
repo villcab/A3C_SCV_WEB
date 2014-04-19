@@ -1,0 +1,10 @@
+1.	Gestionar propietario
+2.	Gestionar teléfono de propietario
+3.	Gestionar marca de vehículo
+4.	Gestionar vehículo de propietario
+5.	Gestionar visita
+6.	Gestionar vehículo de visita
+7.	Gestionar área
+8.	Gestionar tranca
+9.	Registrar ingreso de vehículo de propietario
+10.	Registrar salida de vehículo de propietario
