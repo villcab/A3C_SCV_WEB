@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:ui="http://java.sun.com/jsf/facelets"
-	  xmlns:h="http://java.sun.com/jsf/html" >
+	  xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -10,8 +11,6 @@
 
 	<link rel="stylesheet" href="#{request.contextPath}/resources/css/style.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="#{request.contextPath}/resources/css/social-icons.css" type="text/css" media="screen" />
-	<link type="text/css" rel="stylesheet" href="%PATH_TO_THEME_FOLDER%/skin.css" />
-	
 </h:head>
 
 <h:body>
@@ -25,11 +24,25 @@
 		</div>
 	</div>
 
-	<div id="menu"></div>
+	<div id="menu">
+		<div class="wrapper">
+			<h:form>
+				<p:menubar autoDisplay="false" >
+					<p:menuitem value="Inicio" url="/inicio"/>
+					<p:submenu label="Propietarios y Visitas">
+						<p:menuitem value="Propietarios" url="/propietario"/>
+						<p:menuitem value="Visitas" url="/visita"/>
+					</p:submenu>
+				</p:menubar>
+			</h:form>
+		</div>
+	</div>
 
 	<div id="main">
 		<div class="wrapper">
-			<ui:insert name="content">Content</ui:insert>
+			<div id="content">
+				<ui:insert name="content">Content</ui:insert>
+			</div>
 		</div>
 	</div>
 	

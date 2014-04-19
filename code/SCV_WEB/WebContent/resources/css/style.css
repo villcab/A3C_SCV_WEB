@@ -40,26 +40,19 @@ body {
     color: #51565b;
     background: #f1f1f1 url(img/noise.png);
     font-family: Arial, Helvetica, sans-serif;
-    font-size:  100%;
+    font-size:  11px;
 }
 
 /*	CABECERA	*/
-#header{
+#header {
     height: 116px;
     position: relative;
     z-index: 10;
-    background: rgb(62,136,153); Old browsers
-    background: -moz-linear-gradient(top,  rgba(62,136,153,1) 0%, rgba(0,124,157,1) 100%); FF3.6+
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(62,136,153,1)), color-stop(100%,rgba(0,124,157,1))); Chrome,Safari4+
-    background: -webkit-linear-gradient(top,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); Chrome10+,Safari5.1+
-    background: -o-linear-gradient(top,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); Opera 11.10+
-    background: -ms-linear-gradient(top,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); IE10+
-    background: linear-gradient(to bottom,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); W3C
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e8899', endColorstr='#007c9d',GradientType=0 ); IE6-9
+    background: #4617B4;
 }
 
 /*	ENVOLTURA	*/
-.wrapper{
+.wrapper {
     width: 1000px;
     margin: 0px auto;
     position: relative;
@@ -91,12 +84,9 @@ body {
 /*	MENU	*/
 #menu {
     width: 100%;
-    padding-top: 2px;
+    padding-top: 0px;
     margin-bottom: 0px;
-    background: #f858ef; 
-    background: -webkit-gradient(linear, left top, right bottom, from(#f858ef), to(#ffe413)); 
-    background: -moz-linear-gradient(left,  #f858ef,  #ffe413);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f858ef', endColorstr='#ffe413', GradientType=1);
+    background: #4617B4;
 }
 
 /*	PRINCIPAL	*/
@@ -112,14 +102,7 @@ body {
     line-height: 1.5em;
     line-height: 60px;
     color: #E6E6E6;
-    background: rgb(62,136,153); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(62,136,153,1) 0%, rgba(0,124,157,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(62,136,153,1)), color-stop(100%,rgba(0,124,157,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(62,136,153,1) 0%,rgba(0,124,157,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e8899', endColorstr='#007c9d',GradientType=0 ); /* IE6-9 */
+    background: #4617B4;
 }
 
 #bottom #bottom-text {
@@ -138,8 +121,87 @@ body {
     min-height: 420px;
     overflow: hidden;
     margin-bottom: 40px;
-    font-size: 14px;
-    line-height: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:  11px;
+}
+
+#content .line-divider{
+	clear: both;
+	border-bottom: 1px solid #d7d7d7;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+/*	CLASS PARA NOMBRES DE TITULO	*/
+.name {
+	background-color: #0AA0FF;
+	vertical-align: middle;
+	font-weight: bold;
+	width: 100%;
+	float: left;
+}
+
+/*	TITULOS DE PAGINA	*/
+#page-title {
+	overflow: hidden;
+	height: 103px;
+	margin-bottom: 30px;
+	background:  url(img/tabs-divider.png) repeat-x bottom center;
+	text-shadow: 1px 1px rgba(255, 255, 255, 1);
+}
+
+#page-title .title {
+	display: block;
+	float: left;
+	font-family: 'Ubuntu', arial, serif;
+	font-size: 40px;
+	line-height: 103px;
+	margin-left: 30px;
+}
+
+#page-title .subtitle {
+	display: block;
+	float: left;
+	margin-left: 30px;
+	font-size: 14px;
+	margin-top: 4px;
+	line-height: 103px;
+	color: #929191;
+	font-style: italic;
+}
+
+/*	CONTENIDO DE PAGINA	*/
+#page-content {
+	float: left;
+	width: 906px;
+	margin-left: 30px;
+	line-height: 1.3em;
+}
+
+/*	COLUMNAS PARA LAYOUT	*/
+.one-half,
+.one-third,
+.two-third,
+.three-fourth,
+.one-fourth {
+	float:left;
+	margin-right:30px;
+	position:relative;
+}
+
+.one-half{ width: 438px; }
+
+.one-third{ width: 282px; }
+
+.one-fourth{ width: 204px; }
+
+.two-third{ width: 594px; }
+
+.three-fourth{ width: 672px; }
+
+.last {
+	clear:right;
+	margin-right:0 !important;
 }
 
 /*	ICONOS SOCIALES	*/
