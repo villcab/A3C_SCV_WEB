@@ -30,7 +30,7 @@ public class PPropietario {
 			propietarioBL = new NPropietario();
 			propietarios = propietarioBL.obtenerTodosPropietarios();
 			propietario = new EPropietario();
-			
+
 			log.info("Iniciando vista de gestionar de propietarios");
 		} catch (Exception e) {
 			log.error("Error al cargar vista de gestionar de propietarios: ", e);
@@ -117,5 +117,5 @@ public class PPropietario {
 	public void setEdit(boolean edit) {
 		this.edit = edit;
 	}
-	
+
 }

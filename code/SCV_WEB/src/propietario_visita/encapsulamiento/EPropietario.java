@@ -5,13 +5,13 @@ public class EPropietario {
 	private Integer ci;
 	private String nombre;
 	private String apellido;
-	private byte [] foto;
+	private byte[] foto;
 	private Character sexo;
 	private Boolean estado;
-	
+
 	public EPropietario() {
 	}
-	
+
 	/*** GETTER AND SETTER ***/
 	public Integer getCi() {
 		return ci;
@@ -63,8 +63,7 @@ public class EPropietario {
 
 	@Override
 	public String toString() {
-		return "EPropietario [ci=" + ci + ", nombre=" + nombre + ", apellido="
-				+ apellido + ", sexo=" + sexo + "]";
+		return "EPropietario [ci=" + ci + ", nombre=" + nombre + ", apellido=" + apellido + ", sexo=" + sexo + "]";
 	}
-	
+
 }

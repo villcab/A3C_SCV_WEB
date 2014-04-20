@@ -26,24 +26,24 @@
 						<p:panel id="panelGeneral" header="Informacion General" style="width: 400px" >
 							<h:panelGrid columns="2" cellpadding="3" >
 								<h:outputLabel value="CI: *" styleClass="name" />
-								<p:inputText value="#{pPropietario.propietario.ci}" disabled="#{pPropietario.edit}"/>
+								<h:inputText value="#{pPropietario.propietario.ci}" disabled="#{pPropietario.edit}"/>
 								
 								<h:outputLabel value="Nombres: *" styleClass="name"/>
-								<p:inputText value="#{pPropietario.propietario.nombre}" size="40" />
+								<h:inputText value="#{pPropietario.propietario.nombre}" size="40" />
 								
 								<h:outputLabel value="Apellidos: *" styleClass="name"/>
-								<p:inputText value="#{pPropietario.propietario.apellido}" size="40" />
+								<h:inputText value="#{pPropietario.propietario.apellido}" size="40" />
 								
 								<h:outputLabel value="Sexo: *" styleClass="name"/>
-								<p:selectOneMenu value="#{pPropietario.propietario.sexo}" >
+								<h:selectOneMenu value="#{pPropietario.propietario.sexo}" >
 						            <f:selectItem itemLabel="Masculino" itemValue="m" />
 						            <f:selectItem itemLabel="Femenino" itemValue="f" />
-						        </p:selectOneMenu>
+						        </h:selectOneMenu>
 								
 								<p:commandButton value="Guardar" actionListener="#{pPropietario.registrarPropietario()}" update="tablePropietario, panelGeneral, sms"/>
 								<p:commandButton value="Limpiar" actionListener="#{pPropietario.clear()}" update="panelGeneral"/>
 							</h:panelGrid>
-					</p:panel>
+						</p:panel>
 					</div>
 					
 					<div class="line-divider"></div>
@@ -78,14 +78,14 @@
 						
 						<p:column style="text-align: center;" headerText="ACCIONES">
 
-							<p:commandLink id="editLink" update=":frm:panelGeneral" 
-								action="#{pPropietario.cargarPropietario()}" >
+							<h:commandLink id="editLink"
+								actionListener="#{pPropietario.cargarPropietario()}" >
 								<h:graphicImage alt="Modificar" url="/resources/icons/edit.png"/>
 								<f:param name="ci" value="#{row.ci}" />
-							</p:commandLink>
+							</h:commandLink>
 
-							<h:commandLink id="deleteLink" update="tablePropietario"
-								action="#{pPropietario.anularPropietario()}"
+							<h:commandLink id="deleteLink"
+								actionListener="#{pPropietario.anularPropietario()}"
 								onclick="return confirm('¿Esta seguro que desea eliminar este registro?');">
 								<h:graphicImage alt="Eliminar" url="/resources/icons/delete.png" />
 								<f:param name="ci" value="#{row.ci}" />

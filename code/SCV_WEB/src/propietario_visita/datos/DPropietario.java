@@ -1,15 +1,11 @@
 package propietario_visita.datos;
 
-import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.sql.rowset.serial.SerialBlob;
 
 import org.apache.log4j.Logger;
 
@@ -35,12 +31,7 @@ public class DPropietario {
                 st.setInt(1, data.getCi());
                 st.setString(2, data.getNombre());
                 st.setString(3, data.getApellido());
-                if (data.getFoto() == null) {
-                	st.setNull(4, Types.NULL);
-                } else {
-                	Blob foto = new SerialBlob(data.getFoto());
-                    st.setBlob(4, foto);
-                }
+                st.setBytes(4, data.getFoto());
                 st.setString(5, String.valueOf(data.getSexo()));
                 st.setBoolean(6, data.getEstado());
 
@@ -91,12 +82,7 @@ public class DPropietario {
             if (st != null) {
                 st.setString(1, data.getNombre());
                 st.setString(2, data.getApellido());
-                if (data.getFoto() == null) {
-                	st.setNull(3, Types.NULL);
-                } else {
-                	Blob foto = new SerialBlob(data.getFoto());
-                    st.setBlob(3, foto);
-                }
+                st.setBytes(3, data.getFoto());
                 st.setString(4, String.valueOf(data.getSexo()));
                 st.setBoolean(5, data.getEstado());
                 st.setInt(6, data.getCi());
@@ -188,7 +174,7 @@ public class DPropietario {
         EPropietario response = null;
         try {
             con = ServiceProvider.openConnection();
-            String sql = "SELECT * FROM propietario where ci = ? AND estado = TRUE";
+            String sql = "SELECT * FROM propietario WHERE ci = ? AND estado = TRUE";
             st = con.prepareStatement(sql);
             if (st != null) {
                 st.setInt(1, ci);
@@ -198,12 +184,6 @@ public class DPropietario {
                     response.setCi(rs.getInt("ci"));
                     response.setNombre(rs.getString("nombre"));
                     response.setApellido(rs.getString("apellido"));
-                    Blob foto = rs.getBlob("foto");
-                    if (foto == null) {
-                    	response.setFoto(null);
-                    } else {
-                    	response.setFoto(foto.getBytes(0, (int) foto.length()));
-                    }
                     response.setSexo(rs.getString("sexo").charAt(0));
                     response.setEstado(rs.getBoolean("estado"));
                 }
@@ -253,12 +233,7 @@ public class DPropietario {
                     r.setCi(rs.getInt("ci"));
                     r.setNombre(rs.getString("nombre"));
                     r.setApellido(rs.getString("apellido"));
-                    Blob foto = rs.getBlob("foto");
-                    if (foto == null) {
-                    	r.setFoto(null);
-                    } else {
-                    	r.setFoto(foto.getBytes(0, (int) foto.length()));
-                    }
+//                    r.setFoto(rs.getBytes("foto"));
                     r.setSexo(rs.getString("sexo").charAt(0));
                     r.setEstado(rs.getBoolean("estado"));
                     
