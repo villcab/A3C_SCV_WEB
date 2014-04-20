@@ -7,11 +7,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Named;
+
 import org.apache.log4j.Logger;
 
 import propietario_visita.encapsulamiento.EPropietario;
 import util.ServiceProvider;
 
+@Named
 public class DPropietario {
 	
 	private final Logger log = Logger.getLogger(DPropietario.class);
@@ -233,7 +236,6 @@ public class DPropietario {
                     r.setCi(rs.getInt("ci"));
                     r.setNombre(rs.getString("nombre"));
                     r.setApellido(rs.getString("apellido"));
-//                    r.setFoto(rs.getBytes("foto"));
                     r.setSexo(rs.getString("sexo").charAt(0));
                     r.setEstado(rs.getBoolean("estado"));
                     

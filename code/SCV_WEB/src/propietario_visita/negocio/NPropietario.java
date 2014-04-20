@@ -2,16 +2,17 @@ package propietario_visita.negocio;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import propietario_visita.datos.DPropietario;
 import propietario_visita.encapsulamiento.EPropietario;
 
+@Named
 public class NPropietario {
 
+	@Inject
 	private DPropietario dao; 
-	
-	public NPropietario() {
-		dao = new DPropietario();
-	}
 	
 	public boolean registrarPropietario(EPropietario data) {
 		return dao.registrar(data);

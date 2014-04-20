@@ -1,6 +1,6 @@
 CREATE TABLE tiene_vehiculo ( 
 	placa varchar(10) NOT NULL,
-	visita_id bigint NOT NULL,
+	ci numeric(10) NOT NULL,
 	fecha_reg timestamp NOT NULL
 )
 ;
@@ -38,14 +38,10 @@ CREATE TABLE reg_salida (
 )
 ;
 
-CREATE SEQUENCE visita_visita_id_seq INCREMENT 1 START 1
-;
-
 CREATE TABLE visita ( 
-	visita_id bigint DEFAULT nextval(('visita_visita_id_seq'::text)::regclass) NOT NULL,
-	ci numeric(10),
+	ci numeric(10) NOT NULL,
 	nombre varchar(50) NOT NULL,
-	apellidos varchar(100) NOT NULL,
+	apellido varchar(100) NOT NULL,
 	sexo char(1) NOT NULL,
 	estado boolean NOT NULL
 )
@@ -109,7 +105,7 @@ CREATE TABLE propietario (
 
 
 ALTER TABLE tiene_vehiculo ADD CONSTRAINT PK_TieneVehiculo 
-	PRIMARY KEY (placa, visita_id)
+	PRIMARY KEY (placa, ci)
 ;
 
 
@@ -134,7 +130,7 @@ ALTER TABLE reg_salida ADD CONSTRAINT PK_RegSalida
 
 
 ALTER TABLE visita ADD CONSTRAINT PK_Visita 
-	PRIMARY KEY (visita_id)
+	PRIMARY KEY (ci)
 ;
 
 
@@ -170,12 +166,12 @@ ALTER TABLE propietario ADD CONSTRAINT PK_Propietario
 
 
 
-ALTER TABLE tiene_vehiculo ADD CONSTRAINT FK_TieneVehiculo_VehiculoVisita 
-	FOREIGN KEY (placa) REFERENCES vehiculo_visita (placa)
+ALTER TABLE tiene_vehiculo ADD CONSTRAINT FK_tiene_vehiculo_visita 
+	FOREIGN KEY (ci) REFERENCES visita (ci)
 ;
 
-ALTER TABLE tiene_vehiculo ADD CONSTRAINT FK_TieneVehiculo_Visita 
-	FOREIGN KEY (visita_id) REFERENCES visita (visita_id)
+ALTER TABLE tiene_vehiculo ADD CONSTRAINT FK_TieneVehiculo_VehiculoVisita 
+	FOREIGN KEY (placa) REFERENCES vehiculo_visita (placa)
 ;
 
 ALTER TABLE vehiculo_visita ADD CONSTRAINT FK_VehiculoVisita_Marca 

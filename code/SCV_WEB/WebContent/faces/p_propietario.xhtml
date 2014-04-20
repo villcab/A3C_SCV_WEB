@@ -19,9 +19,9 @@
 				</div>
 				
 				<h:form id="frm">
-				
+
 					<p:growl id="sms" life="5000" />
-					
+
 					<div id="page-content">
 						<p:panel id="panelGeneral" header="Informacion General" style="width: 400px" >
 							<h:panelGrid columns="2" cellpadding="3" >
@@ -57,44 +57,48 @@
 								 emptyMessage="No hay registros de propietarios">
 					
 						<f:facet name="header">
-							<h:outputText value="LISTA DE PROPIETARIOS" />
+							LISTA DE PROPIETARIOS
 						</f:facet>
 						
-						<p:column headerText="CI" filterBy="#{row.ci}" sortBy="#{row.ci}">
+						<p:column headerText="CI" filterBy="#{row.ci}" >
 							<h:outputText value="#{row.ci}" />
 						</p:column>
 						
-						<p:column headerText="Nombres" filterBy="#{row.nombre}" sortBy="#{row.nombre}">
+						<p:column headerText="Nombres" filterBy="#{row.nombre}" >
 							<h:outputText value="#{row.nombre}" />
 						</p:column>
 						
-						<p:column headerText="Apellidos" filterBy="#{row.apellido}" sortBy="#{row.apellido}">
+						<p:column headerText="Apellidos" filterBy="#{row.apellido}" >
 							<h:outputText value="#{row.apellido}" />
 						</p:column>
 						
-						<p:column headerText="Sexo" sortBy="#{row.sexo}">
+						<p:column headerText="Sexo" filterBy="#{row.sexo}">
 							<h:outputText value="#{row.sexo}" />
 						</p:column>
 						
 						<p:column style="text-align: center;" headerText="ACCIONES">
 
-							<h:commandLink id="editLink"
+							<p:commandLink id="editLink" update=":frm:panelGeneral"
 								actionListener="#{pPropietario.cargarPropietario()}" >
 								<h:graphicImage alt="Modificar" url="/resources/icons/edit.png"/>
 								<f:param name="ci" value="#{row.ci}" />
-							</h:commandLink>
+							</p:commandLink>
 
-							<h:commandLink id="deleteLink"
-								actionListener="#{pPropietario.anularPropietario()}"
-								onclick="return confirm('¿Esta seguro que desea eliminar este registro?');">
+							<p:commandLink id="deleteLink" update="tablePropietario, :frm:sms"
+								actionListener="#{pPropietario.anularPropietario()}" >
+								<p:confirm header="Confirmacion" message="Estas seguro de Eliminar este registro?" icon="ui-icon-alert" />
 								<h:graphicImage alt="Eliminar" url="/resources/icons/delete.png" />
 								<f:param name="ci" value="#{row.ci}" />
-							</h:commandLink>
+							</p:commandLink>
 
 						</p:column>
 						
 					</p:dataTable>
 					
+					<p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
+				        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+				        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
+				    </p:confirmDialog>
 				</h:form>
 			
 			</div>

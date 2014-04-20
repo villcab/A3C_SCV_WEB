@@ -9,13 +9,13 @@
 	</url-mapping>
 	
 	<url-mapping id="propietario">
-		<pattern value="/propietario" />
+		<pattern value="/propietarios" />
 		<view-id value="/faces/p_propietario.jsf" />
 	</url-mapping>
 	
-	<url-mapping id="demo">
-		<pattern value="/demo" />
-		<view-id value="/faces/demo.jsf" />
+	<url-mapping id="visitas">
+		<pattern value="/visitas" />
+		<view-id value="/faces/p_visita.jsf" />
 	</url-mapping>
 
 </pretty-config>

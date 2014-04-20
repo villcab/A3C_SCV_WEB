@@ -1,10 +1,12 @@
 package propietario_visita.presentacion;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
 
@@ -14,10 +16,12 @@ import util.FacesUtil;
 
 @ManagedBean
 @ViewScoped
-public class PPropietario {
+public class PPropietario implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	private final Logger log = Logger.getLogger(PPropietario.class);
 	
+	@Inject
 	private NPropietario propietarioBL;
 	
 	private List<EPropietario> propietarios;
@@ -27,13 +31,13 @@ public class PPropietario {
 	@PostConstruct
 	public void init() {
 		try {
-			propietarioBL = new NPropietario();
+			
 			propietarios = propietarioBL.obtenerTodosPropietarios();
 			propietario = new EPropietario();
 
-			log.info("Iniciando vista de gestionar de propietarios");
+			log.info("Iniciando vista de gestion de propietarios");
 		} catch (Exception e) {
-			log.error("Error al cargar vista de gestionar de propietarios: ", e);
+			log.error("Error al cargar vista de gestion de propietarios: ", e);
 		}
 	}
 	
