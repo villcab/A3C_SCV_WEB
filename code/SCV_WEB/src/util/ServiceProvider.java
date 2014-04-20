@@ -2,7 +2,6 @@ package util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
@@ -15,15 +14,15 @@ public class ServiceProvider {
 	private static String USERNAME = Parameters.db_username;
 	private static String PASSWORD = Parameters.db_password;
 
-	public static synchronized Connection openConnection() throws SQLException {
-		Connection conexion = null;
+	public static synchronized Connection openConnection() {
+		Connection con = null;
 		try {
 			Class.forName(DRIVER).newInstance();
-			conexion = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 		} catch (Exception e) {
-			log.error("Error al obtener conexion postgres: " + e);
+			log.error("Error al obtener conexion postgres URL["+URL+"], DRIVER["+DRIVER+"], USERNAME["+USERNAME+"], PASSWORD["+PASSWORD+"]: " + e);
 		}
-		return conexion;
+		return con;
 	}
 	
 }

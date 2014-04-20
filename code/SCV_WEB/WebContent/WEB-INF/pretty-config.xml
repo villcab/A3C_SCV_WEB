@@ -3,19 +3,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.3.3 http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.3.xsd">
 
-	<url-mapping id="login">
-		<pattern value="/" />
-		<view-id value="/faces/login.jsf" />
-	</url-mapping>
-	
 	<url-mapping id="inicio">
-		<pattern value="/inicio" />
+		<pattern value="/" />
 		<view-id value="/faces/index.jsf" />
 	</url-mapping>
 	
 	<url-mapping id="propietario">
 		<pattern value="/propietario" />
-		<view-id value="/faces/propietario.jsf" />
+		<view-id value="/faces/p_propietario.jsf" />
 	</url-mapping>
 	
 	<url-mapping id="demo">

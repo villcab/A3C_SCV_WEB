@@ -2,28 +2,22 @@ package propietario_visita.encapsulamiento;
 
 public class EPropietario {
 
-	private int ci;
+	private Integer ci;
 	private String nombre;
 	private String apellido;
 	private byte [] foto;
-	private char sexo;
-	private boolean estado;
+	private Character sexo;
+	private Boolean estado;
 	
 	public EPropietario() {
-		this.ci = 0;
-		this.nombre = "";
-		this.apellido = "";
-		this.foto = null;
-		this.sexo = ' ';
-		this.estado = false;
 	}
 	
 	/*** GETTER AND SETTER ***/
-	public int getCi() {
+	public Integer getCi() {
 		return ci;
 	}
 
-	public void setCi(int ci) {
+	public void setCi(Integer ci) {
 		this.ci = ci;
 	}
 
@@ -51,20 +45,26 @@ public class EPropietario {
 		this.foto = foto;
 	}
 
-	public char getSexo() {
+	public Character getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(char sexo) {
+	public void setSexo(Character sexo) {
 		this.sexo = sexo;
 	}
 
-	public boolean isEstado() {
+	public Boolean getEstado() {
 		return estado;
 	}
 
-	public void setEstado(boolean estado) {
+	public void setEstado(Boolean estado) {
 		this.estado = estado;
+	}
+
+	@Override
+	public String toString() {
+		return "EPropietario [ci=" + ci + ", nombre=" + nombre + ", apellido="
+				+ apellido + ", sexo=" + sexo + "]";
 	}
 	
 }

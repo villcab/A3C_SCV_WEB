@@ -28,7 +28,7 @@
 		<div class="wrapper">
 			<h:form>
 				<p:menubar autoDisplay="false" >
-					<p:menuitem value="Inicio" url="/inicio"/>
+					<p:menuitem value="Inicio" url="/"/>
 					<p:submenu label="Propietarios y Visitas">
 						<p:menuitem value="Propietarios" url="/propietario"/>
 						<p:menuitem value="Visitas" url="/visita"/>
@@ -40,9 +40,7 @@
 
 	<div id="main">
 		<div class="wrapper">
-			<div id="content">
-				<ui:insert name="content">Content</ui:insert>
-			</div>
+			<ui:insert name="content">Content</ui:insert>
 		</div>
 	</div>
 	
