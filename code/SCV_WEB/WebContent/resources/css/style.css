@@ -118,7 +118,7 @@ body {
 
 /*	CONTENIDO	*/
 #content {
-    min-height: 420px;
+    min-height: 100px;
     overflow: hidden;
     margin-bottom: 40px;
     font-family: Tahoma, sans-serif;
@@ -175,7 +175,7 @@ body {
 	float: left;
 	width: 906px;
 	margin-left: 30px;
-	line-height: 1.3em;
+	
 }
 
 /*	COLUMNAS PARA LAYOUT	*/

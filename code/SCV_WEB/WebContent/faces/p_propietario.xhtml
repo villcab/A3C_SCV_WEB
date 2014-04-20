@@ -90,15 +90,91 @@
 								<h:graphicImage alt="Eliminar" url="/resources/icons/delete.png" />
 								<f:param name="ci" value="#{row.ci}" />
 							</p:commandLink>
-
+							
+							<p:commandLink id="telefonoLink" update=":frmTelefono"
+								actionListener="#{pTelefono.cargarTelefonos()}"
+								oncomplete="dlgTelefono.show();" >
+								<h:graphicImage alt="Telefonos" value="/resources/icons/phone_book.png" />
+								<f:param name="ci" value="#{row.ci}" />
+							</p:commandLink>
+							
 						</p:column>
 						
 					</p:dataTable>
 					
 					<p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
-				        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+				        <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
 				        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
 				    </p:confirmDialog>
+				    
+				</h:form>
+				
+				<h:form id="frmTelefono">
+					<p:dialog id="dialogTelefono"
+				    		  header="ADMINISTRAR TELEFONOS"
+				    		  widgetVar="dlgTelefono"
+				    		  modal="true"
+				    		  resizable="false"
+				    		  showEffect="fade"
+				    		  hideEffect="fade" >
+						
+						<div id="content">
+							
+							<p:panel id="panelTelefono" header="INFORMACION GENERAL">
+								<h:panelGrid columns="2" cellpadding="3" >
+		
+									<h:outputLabel value="Id Telefono: " rendered="#{pTelefono.edit}" styleClass="name" />
+									<h:inputText value="#{pTelefono.telefono.telefonoId}" rendered="#{pTelefono.edit}" disabled="#{pTelefono.edit}" />
+		
+									<h:outputLabel value="Nro. Telefono: *" styleClass="name" />
+									<h:inputText value="#{pTelefono.telefono.numero}" size="30" maxlength="10" />
+		
+									<p:commandButton value="Guardar" actionListener="#{pTelefono.registrarTelefono()}" update="panelTelefono, tableTelefono"/>
+									<p:commandButton value="Limpiar" actionListener="#{pTelefono.clear()}" update="panelTelefono" />
+								</h:panelGrid>
+							</p:panel>
+		
+							<div class="line-divider"></div>
+		
+							<p:dataTable id="tableTelefono"
+										 var="row1"
+										 value="#{pTelefono.telefonos}"
+										 paginator="true" rows="5"
+										 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+										 rowsPerPageTemplate="5"
+										 rowKey="#{row1.telefonoId}">
+								
+								<p:column sortBy="#{row1.numero}" filterBy="#{row1.numero}">
+									<f:facet name="header">
+										<h:outputText value="NRO. TELEFONO" />
+									</f:facet>
+									<h:outputText value="#{row1.numero}" />
+								</p:column>
+		
+								<p:column style="text-align: center;">
+									<f:facet name="header">
+										<h:outputText value="ACCIONES" />
+									</f:facet>
+		
+									<h:commandLink id="editTelefono"
+										actionListener="#{pTelefono.cargarTelefono()}">
+										<h:graphicImage url="/resources/icons/edit.png" />
+										<f:param name="telefonoId" value="#{row1.telefonoId}" />
+										<p:ajax update=":frmTelefono:panelTelefono"/>
+									</h:commandLink>
+		
+									<h:commandLink id="deleteTelefono"
+										actionListener="#{pTelefono.anularTelefono()}"
+										onclick="return confirm('¿Esta seguro que desea eliminar este registro?');">
+										<h:graphicImage alt="Eliminar" url="/resources/icons/delete.png" styleClass="icon" />
+										<f:param name="telefonoId" value="#{row1.telefonoId}" />
+										<p:ajax update=":frmTelefono:tableTelefono, :frmTelefono:panelTelefono"/>
+									</h:commandLink>
+								</p:column>
+								
+							</p:dataTable>
+						</div>
+					</p:dialog>
 				</h:form>
 			
 			</div>
